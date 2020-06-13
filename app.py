@@ -92,29 +92,29 @@ def handle_message(event):
         
         
     elif event.message.text.startswith('電影-'):
-    _, num = event.message.text.split('-')
-    print(num)
-    movie_info = movie(num)
-    print(movie_info)
-    columns_info = []
-    for m in movie_info:
-        colum = CarouselColumn(
-                thumbnail_image_url='https://example.com/item1.jpg',
-                title=m[0],
-                text=m[0],
-                actions=[
-                    URITemplateAction(
-                        label='前往觀看',
-                        uri=m[1]
-                    )
-                ]
-            )
-        columns_info += [colum]
-    print(columns_info)        
-    message = TemplateSendMessage(
-        alt_text='新聞文章',
-        template=CarouselTemplate(columns= columns_info)
-    )
+        _, num = event.message.text.split('-')
+        print(num)
+        movie_info = movie(num)
+        print(movie_info)
+        columns_info = []
+        for m in movie_info:
+            colum = CarouselColumn(
+                    thumbnail_image_url='https://example.com/item1.jpg',
+                    title=m[0],
+                    text=m[0],
+                    actions=[
+                        URITemplateAction(
+                            label='前往觀看',
+                            uri=m[1]
+                        )
+                    ]
+                )
+            columns_info += [colum]
+        print(columns_info)        
+        message = TemplateSendMessage(
+            alt_text='新聞文章',
+            template=CarouselTemplate(columns= columns_info)
+        )
 
     else:
         message = TextSendMessage(text=event.message.text)
