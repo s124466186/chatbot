@@ -85,7 +85,7 @@ def handle_message(event):
     elif event.message.text == '傳送文字':
         message = TextSendMessage(getNews())
     elif event.message.text == '傳送電影':
-        message = TextSendMessage(moive())
+        message = TextSendMessage(movie())
     else:
         message = TextSendMessage(text=event.message.text)
     line_bot_api.reply_message(event.reply_token, message)
