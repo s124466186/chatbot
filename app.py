@@ -57,10 +57,6 @@ def movie():
 
 
 def getNews():
-    """
-    建立一個抓最新消息的function
-    """
-
 
     url = 'https://www.ettoday.net/news/focus/3C%E5%AE%B6%E9%9B%BB/'
     r = requests.get(url)
@@ -88,7 +84,7 @@ def handle_message(event):
         )
     elif event.message.text == '傳送文字':
         message = TextSendMessage(getNews())
-    elif event.message.text == '傳送電影:
+    elif event.message.text == '傳送電影':
         message = TextSendMessage(moive())
     else:
         message = TextSendMessage(text=event.message.text)
