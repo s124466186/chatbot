@@ -38,7 +38,7 @@ def callback():
 
     return 'OK'
 
-def movie():
+def movie(num):
     num = int(num)
     target_url = 'http://www.atmovies.com.tw/movie/next/0/'
     print('Start parsing movie ...')
