@@ -8,6 +8,9 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import *
+import requests
+import re
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
@@ -57,9 +60,7 @@ def getNews():
 	"""
 	建立一個抓最新消息的function
 	"""
-	import requests
-	import re
-	from bs4 import BeautifulSoup
+	
 
 	url = 'https://www.ettoday.net/news/focus/3C%E5%AE%B6%E9%9B%BB/'
 	r = requests.get(url)
